@@ -13,7 +13,6 @@ function App() {
           Baby React Names
         </p>
       </header>
-
       <div className="App">
         <ShowNames BabyNames={BabyNamesData}/>      
       </div>
