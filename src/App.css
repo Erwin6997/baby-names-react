@@ -1,9 +1,9 @@
 .App {
-  text-align: center;
+  text-align: left;
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 4vmin;
   pointer-events: none;
 }
 
@@ -15,8 +15,8 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
+  min-height: 10vh;
+  display: block;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -25,7 +25,7 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: #052a35;
 }
 
 @keyframes App-logo-spin {
@@ -73,7 +73,7 @@
   font-size: 28px;
 }
 .Div_M_F_CSS:hover {
-  color: rgb(144, 255, 240);
+  color: rgb(170, 240, 230);
   cursor: pointer;
 }
 .I_C_M_Filter_CSS,
@@ -94,11 +94,11 @@
 }
 .I_MaleFilter_CSS:hover {
   cursor: pointer;
-  color: #88c8fd;
+  color: #80b6e2;
 }
 .I_FemailFilter_CSS:hover {
   cursor: pointer;
-  color: #fc86af;
+  color: #f8689a;
 }
 .Div_ShowNames_CSS {
   width: 100%;
