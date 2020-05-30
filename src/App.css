@@ -1,10 +1,20 @@
-.App {
-  text-align: left;
+.App2{
+  text-align: center;
 }
-
+.App {
+  
+  border: 4px solid;
+  top: 2%;
+  width: 70%;
+  padding: 30px 20px;
+  border-radius: 5px;
+  margin: auto;
+  display: grid;
+}
 .App-logo {
-  height: 4vmin;
-  pointer-events: none;
+  height: 4cm;
+  width: 7cm;
+
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -14,14 +24,9 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: white;
   min-height: 10vh;
-  display: block;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  border-bottom: 2px solid black;
 }
 
 .App-link {
@@ -33,145 +38,77 @@
     transform: rotate(0deg);
   }
   to {
-    transform: rotate(360deg);
+    transform: rotate(5deg);
   }
 }
 
-
-/* ggg */
-@keyframes Sex_Selected {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.08);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-.Div_Search_CSS {
-  width: 100%;
-  height: 50px;
+.Container{
+  margin: 200px;
   display: flex;
+  flex-direction: row;
   justify-content: center;
-  align-items: center;
-}
-.Input_Name_CSS {
-  width: 300px;
-  height: 30px;
-  border: none;
-  background-color: #f4f6f8;
-  border-radius: 50px;
-  outline: none;
-  text-indent: 10px;
-  margin-right: 50px;
-  font-weight: bold;
-}
-.Div_M_F_CSS {
-  color: white;
-  font-size: 28px;
-}
-.Div_M_F_CSS:hover {
-  color: rgb(170, 240, 230);
-  cursor: pointer;
-}
-.I_C_M_Filter_CSS,
-.I_C_F_Filter_CSS {
-  padding: 15px 5px;
-  transition: 200ms;
+  margin: auto;
+  flex-wrap: wrap;
 }
 
-.I_MaleFilter_CSS,
-.I_FemailFilter_CSS {
-  color: white;
-  font-size: 28px;
-  padding: 15px;
-  transition: 200ms;
+.m{
+  background-color: #90CAF9;
+  width: fit-content;
+  border-radius: 5px;
+  padding: 2px;
+  color: #0D47A1;
+  font-weight: bolder;
+  margin: 5px;
+  font-size: 19px;
+  padding: 2px 8px; 
 }
-.I_MaleFilter_CSS {
-  margin-left: 30px;
-}
-.I_MaleFilter_CSS:hover {
-  cursor: pointer;
-  color: #80b6e2;
-}
-.I_FemailFilter_CSS:hover {
-  cursor: pointer;
-  color: #f8689a;
-}
-.Div_ShowNames_CSS {
-  width: 100%;
-  border-radius: 8px;
-  background-color: #f4f6f8;
-  padding: 5px 0px 5px 0px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  transition: 200ms;
+.m:hover{
+  transform: scale(1.10);
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 
-.Div_Male_CSS,
-.Div_Me_CSS {
-  width: 70px;
-  height: 70px;
-  color: #0d47a1;
-  background-color: #90caf9;
-  border-radius: 3px;
-  margin: 2px;
+.f{
+  background-color: #F8BBD0;
+  width: fit-content;
+  border-radius: 5px;
+  padding: 2px;
+  color: #C2185B;
+  font-weight: bolder;
+  margin: 5px;
+  font-size: 19px;
+  padding: 2px 8px; 
+}
+.f:hover{
+  transform: scale(1.10);
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.search{
+  margin: 10px 20px ;
+  padding: 1px 10px;
+  border-radius: 5px;
+  font-weight: bolder;
+  font-size: 15px;
+}
+
+.icons{
   display: flex;
-  flex-wrap: wrap;
-  transition: 200ms;
-}
-.Div_Male_CSS:hover {
-  background-color: #60b3f6;
-  cursor: pointer;
-}
-.Div_Me_CSS{
-    color: #075e02;
-    background-color: #76fc6f;
-}
-.Div_Me_CSS:hover{
-    background-color: #36f12c;
-    cursor: pointer;
-}
-.I_CSS{
-  display: flex;
-  justify-content: center;
+  flex-direction: row;
+  margin: 0 15px;
   align-items: center;
-  width: 70px;
-  height: 35px;
-  margin: 0px;
-  padding-top: 5px;
-  font-size: 27px;
+
 }
-.Div_Female_CSS {
-  width: 70px;
-  height: 70px;
-  color: #c2185b;
-  background-color: #f8bbd0;
-  border-radius: 3px;
-  margin: 2px;
+
+.nav-bar{
   display: flex;
-  flex-wrap: wrap;
-  transition: 200ms;
-}
-.Div_Female_CSS:hover {
-  background-color: #f27da6;
-  cursor: pointer;
-}
-.P_Name_CSS{
-  width: 70px;
-  height: 20px;
-  font-size: 12px;
-  margin: 0px;
-  display: flex;
+  flex-direction: row;
   justify-content: center;
-  align-items: center;
-  font-weight: bold;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
 }
-.P_ME_CSS{
-    color: #0eac06;
-    background-color: #87f781;
-    border-radius: 3px;
+.footer {
+  background-color: rgb(198, 226, 243);
+  margin-top: 3cm;
+  padding-top: 20px;
+  text-align: center;
 }
