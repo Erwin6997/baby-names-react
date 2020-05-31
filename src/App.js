@@ -6,6 +6,7 @@ import ShowNames from './ShowNames';
 import Boy from './Boy';
 import Girl from './Girl';
 import Footer from './Footer';
+import All from './All';
 
 const  App = () => {
 
@@ -34,12 +35,12 @@ const  App = () => {
         <div className="nav-bar">
           <input className="search" label='Search Names' placeholder="Search names" onChange={Change}></input> 
           <div  className='icons'>
-            <Girl data={data} setBabyName={setBabyName}/>
-            <Boy data={data} setBabyName={setBabyName}/>
+            <Girl data={data} setBabyName={setBabyName} />
+            <All data={data} setBabyName={setBabyName} />
+            <Boy data={data} setBabyName={setBabyName} />
           </div>
         </div>
         <ShowNames babyNames = {babyName}/>
-        <hr className="line"></hr>
       </div>
       <Footer />
       </div>

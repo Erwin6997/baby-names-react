@@ -1,14 +1,12 @@
 import React from "react";
 
 const ShowNames = (props) => {
-  console.log(props + "peraps")
-
+  props.babyNames.sort((a, b) => (a.name > b.name ? 1 : -1))
   return (
     <div className="Container">
-      {
-        props.babyNames.sort((a, b) => (a.name > b.name ? 1 : -1))
-        .map((element,index) => {
-            return ( <p className={element.sex}>{element.name}</p>
+      { 
+      props.babyNames.map((element,index) => {
+            return ( <p key={index} className={element.sex}>{element.name}</p>
             );  
           })
         }
