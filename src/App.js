@@ -21,7 +21,15 @@ const  App = () => {
   useEffect( () => {
     setBabyName (data.filter( item => item.name.toLowerCase().includes(name)))
   }, [name])
-
+  const filterBySex = (sex) => {
+    if (sex === "f") {
+      setBabyName (data.filter( item => item.sex === 'f'))
+    }else if (sex === "m") {
+      setBabyName (data.filter( item => item.sex === 'm'))
+    }else{
+      setBabyName (data)
+    }
+  }   
     return (
       <div>
       <Header />
@@ -29,9 +37,9 @@ const  App = () => {
         <div className="nav-bar">
           <input className="search" label='Search Names' placeholder="Search names" onChange={Change}></input> 
           <div  className='icons'>
-            <Girl data={data} setBabyName={setBabyName} />
-            <All data={data} setBabyName={setBabyName} />
-            <Boy data={data} setBabyName={setBabyName} />
+            <Girl onClick={()=> filterBySex("f")} />
+            <All onClick={()=> filterBySex("all")} />
+            <Boy onClick={()=> filterBySex("m")} />
           </div>
         </div>
         <ShowNames babyNames = {babyName}/>
