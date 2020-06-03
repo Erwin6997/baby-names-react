@@ -2,7 +2,7 @@ import React from 'react';
 
 const All = (props) => {
     const imageClick = () => {
-        props.setBabyName (props.data.filter( item => item.sex === 'f' && item.sex === 'm'))
+        props.setBabyName (props.data.filter( item => item.sex === 'f' || item.sex === 'm'))
     }
     return (
         <div>
