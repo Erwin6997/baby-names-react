@@ -32,17 +32,16 @@ const  App = () => {
       setBabyName (data)
     }
   }   
-  const favorite = value =>{
+  const favorite = (value) =>{
     setFavoriteNames([...favoriteNames, value]);
-    const updatedNames = name.filter(name => name.id !== (value.id));
-    console.log(value+"hshsh");
-    setName(updatedNames)
+    const addNames = babyName.filter(name => name.id !== (value.id));
+    setBabyName(addNames)
   }
   const removeFavorites = value => {
     const updatedFavoriteNames = favoriteNames.filter(name => name.id !== value.id);
     setFavoriteNames(updatedFavoriteNames);
-    const updatedNames = [...name, value];
-    setName(updatedNames)
+    const updatedNames = [...babyName, value];
+    setBabyName(updatedNames)
   };
     return (
       <div>
@@ -59,7 +58,7 @@ const  App = () => {
           <FavoritesNames names={favoriteNames} remove={removeFavorites} />
           </div>
         </div>
-        <ShowNames babyNames = {babyName} add={favorite}/>
+        <ShowNames babyNames={babyName} add={favorite}/>
       </div>
       <Footer />
       </div>

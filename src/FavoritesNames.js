@@ -2,11 +2,9 @@ import React, { useState } from "react";
 
 
 const FavoriteNames = (props) => {
-  console.log(props.names.id+"gggg props");
   return (
-      <div className="container">
         <div className="favorites">
-          <span>Favorites: </span>
+          <h3>Favorites: </h3>
           {props.names.map((name) => (
             <span
               key={name.id}
@@ -16,7 +14,6 @@ const FavoriteNames = (props) => {
             </span>
           ))}
         </div>
-      </div>
   );
 };
 
