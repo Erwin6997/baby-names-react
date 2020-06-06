@@ -8,11 +8,12 @@ import Girl from './Girl';
 import Footer from './Footer';
 import All from './All';
 import Header from './Header';
-
+import FavoritesNames from "./FavoritesNames";
 const  App = () => {
 
   const [name, setName] = useState('')
   const [babyName, setBabyName] = useState ([])
+  const [favoriteNames, setFavoriteNames] = useState([]);
 
   const Change = e => {
     setName((e.target.value).toLowerCase())
@@ -21,6 +22,7 @@ const  App = () => {
   useEffect( () => {
     setBabyName (data.filter( item => item.name.toLowerCase().includes(name)))
   }, [name])
+
   const filterBySex = (sex) => {
     if (sex === "f") {
       setBabyName (data.filter( item => item.sex === 'f'))
@@ -30,19 +32,34 @@ const  App = () => {
       setBabyName (data)
     }
   }   
+  const favorite = value =>{
+    setFavoriteNames([...favoriteNames, value]);
+    const updatedNames = name.filter(name => name.id !== (value.id));
+    console.log(value+"hshsh");
+    setName(updatedNames)
+  }
+  const removeFavorites = value => {
+    const updatedFavoriteNames = favoriteNames.filter(name => name.id !== value.id);
+    setFavoriteNames(updatedFavoriteNames);
+    const updatedNames = [...name, value];
+    setName(updatedNames)
+  };
     return (
       <div>
       <Header />
       <div className="App">
         <div className="nav-bar">
-          <input className="search" label='Search Names' placeholder="Search names" onChange={Change}></input> 
+          <input className="search" placeholder="Search names" onChange={Change}></input>
           <div  className='icons'>
             <Girl onClick={()=> filterBySex("f")} />
             <All onClick={()=> filterBySex("all")} />
             <Boy onClick={()=> filterBySex("m")} />
           </div>
+          <div>
+          <FavoritesNames names={favoriteNames} remove={removeFavorites} />
+          </div>
         </div>
-        <ShowNames babyNames = {babyName}/>
+        <ShowNames babyNames = {babyName} add={favorite}/>
       </div>
       <Footer />
       </div>

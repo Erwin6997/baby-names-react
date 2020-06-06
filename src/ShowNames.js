@@ -6,7 +6,7 @@ const ShowNames = (props) => {
     <div className="Container">
       { 
       props.babyNames.map((element,index) => {
-            return ( <p key={index} className={element.sex}>{element.name}</p>
+            return ( <p key={index} onClick={props.onClick} className={element.sex} >{element.name}</p>
             );  
           })
         }
