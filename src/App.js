@@ -12,7 +12,7 @@ import FavoritesNames from "./FavoritesNames";
 const  App = () => {
 
   const [name, setName] = useState('')
-  const [babyName, setBabyName] = useState ([])
+  const [babyNames, setBabyNames] = useState ([])
   const [favoriteNames, setFavoriteNames] = useState([]);
 
   const Change = e => {
@@ -20,28 +20,28 @@ const  App = () => {
   }
 
   useEffect( () => {
-    setBabyName (data.filter( item => item.name.toLowerCase().includes(name)))
+    setBabyNames(data.filter( item => item.name.toLowerCase().includes(name)))
   }, [name])
 
   const filterBySex = (sex) => {
     if (sex === "f") {
-      setBabyName (data.filter( item => item.sex === 'f'))
+      setBabyNames(data.filter( item => item.sex === 'f'))
     }else if (sex === "m") {
-      setBabyName (data.filter( item => item.sex === 'm'))
+      setBabyNames(data.filter( item => item.sex === 'm'))
     }else{
-      setBabyName (data)
+      setBabyNames(data)
     }
   }   
   const favorite = (value) =>{
     setFavoriteNames([...favoriteNames, value]);
-    const addNames = babyName.filter(name => name.id !== (value.id));
-    setBabyName(addNames)
+    const addNames = babyNames.filter(name => name.id !== (value.id));
+    setBabyNames(addNames)
   }
   const removeFavorites = value => {
     const updatedFavoriteNames = favoriteNames.filter(name => name.id !== value.id);
     setFavoriteNames(updatedFavoriteNames);
-    const updatedNames = [...babyName, value];
-    setBabyName(updatedNames)
+    const updatedNames = [...babyNames, value];
+    setBabyNames(updatedNames)
   };
     return (
       <div>
@@ -58,7 +58,7 @@ const  App = () => {
           <FavoritesNames names={favoriteNames} remove={removeFavorites} />
           </div>
         </div>
-        <ShowNames babyNames={babyName} add={favorite}/>
+        <ShowNames babyNames={babyNames} add={favorite}/>
       </div>
       <Footer />
       </div>
