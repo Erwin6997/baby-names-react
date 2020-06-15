@@ -34,14 +34,18 @@ const  App = () => {
   }   
   const favorite = (value) =>{
     setFavoriteNames([...favoriteNames, value]);
-    const addNames = babyNames.filter(name => name.id !== (value.id));
+    const addNames = babyNames.filter(name => name.id !== value.id);
     setBabyNames(addNames)
   }
   const removeFavorites = value => {
     const updatedFavoriteNames = favoriteNames.filter(name => name.id !== value.id);
     setFavoriteNames(updatedFavoriteNames);
-    const updatedNames = [...babyNames, value];
-    setBabyNames(updatedNames)
+    babyNames.map((name) => { 
+      if (value.sex === name.sex){
+        const updatedNames = [...babyNames, value];
+        setBabyNames(updatedNames)
+      }
+    })
   };
     return (
       <div>
