@@ -11,7 +11,6 @@ import FavoritesNames from "./FavoritesNames";
 import Footer from './Footer';
 
 const  App = () => {
-
   const [name, setName] = useState('');
   const [babyNames, setBabyNames] = useState ([]);
   const [updateData , setUpdateData] = useState([]);
@@ -23,6 +22,7 @@ const  App = () => {
 
   useEffect( () => {
     setBabyNames(data.filter( item => item.name.toLowerCase().includes(name)))
+    setUpdateData(data.filter( item => item.name.toLowerCase().includes(name)))
   }, [name])
   
   const favorite = (value) =>{
@@ -49,8 +49,9 @@ const  App = () => {
       setBabyNames(updateData.filter( item => item.sex === 'm'))
     }else{
         setBabyNames(updateData)
+          }
         }
-    }
+    
   
     return (
       <div>
