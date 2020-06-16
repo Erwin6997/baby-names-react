@@ -5,14 +5,16 @@ import data from './babyNamesData.json';
 import ShowNames from './ShowNames';
 import Boy from './Boy';
 import Girl from './Girl';
-import Footer from './Footer';
 import All from './All';
 import Header from './Header';
 import FavoritesNames from "./FavoritesNames";
+import Footer from './Footer';
+
 const  App = () => {
 
-  const [name, setName] = useState('')
-  const [babyNames, setBabyNames] = useState ([])
+  const [name, setName] = useState('');
+  const [babyNames, setBabyNames] = useState ([]);
+  const [updateData , setUpdateData] = useState([]);
   const [favoriteNames, setFavoriteNames] = useState([]);
 
   const Change = e => {
@@ -22,20 +24,12 @@ const  App = () => {
   useEffect( () => {
     setBabyNames(data.filter( item => item.name.toLowerCase().includes(name)))
   }, [name])
-
-  const filterBySex = (sex) => {
-    if (sex === "f") {
-      setBabyNames(data.filter( item => item.sex === 'f'))
-    }else if (sex === "m") {
-      setBabyNames(data.filter( item => item.sex === 'm'))
-    }else{
-      setBabyNames(data)
-    }
-  }   
+  
   const favorite = (value) =>{
     setFavoriteNames([...favoriteNames, value]);
     const addNames = babyNames.filter(name => name.id !== value.id);
     setBabyNames(addNames)
+    setUpdateData(addNames)
   }
   const removeFavorites = value => {
     const updatedFavoriteNames = favoriteNames.filter(name => name.id !== value.id);
@@ -44,9 +38,20 @@ const  App = () => {
       if (value.sex === name.sex){
         const updatedNames = [...babyNames, value];
         setBabyNames(updatedNames)
+        setUpdateData(updatedNames)
       }
     })
   };
+  const filterBySex = (sex) => {
+    if (sex === "f") {
+      setBabyNames(updateData.filter( item => item.sex === 'f'))
+    }else if (sex === "m") {
+      setBabyNames(updateData.filter( item => item.sex === 'm'))
+    }else{
+        setBabyNames(updateData)
+        }
+    }
+  
     return (
       <div>
       <Header />
@@ -54,9 +59,12 @@ const  App = () => {
         <div className="nav-bar">
           <input className="search" placeholder="Search names" onChange={Change}></input>
           <div  className='icons'>
-            <Girl onClick={()=> filterBySex("f")} />
-            <All onClick={()=> filterBySex("all")} />
-            <Boy onClick={()=> filterBySex("m")} />
+            <input type="radio" onClick={()=> filterBySex("m")} name="gender" value="male"></input><label>Boy</label>
+            <input type="radio" onClick={()=> filterBySex("f")} name="gender" value="female"></input><label>Girl</label>
+            <input type="radio" onClick={()=> filterBySex("all")} name="gender" value="other"></input><label>All</label>
+           {/* <Girl  />
+            <All  />
+            <Boy  /> */}
           </div>
           <div>
           <FavoritesNames names={favoriteNames} remove={removeFavorites} />
