@@ -63,9 +63,6 @@ const  App = () => {
             <input type="radio" onClick={()=> filterBySex("m")} name="gender" value="male"></input><label>Boy</label>
             <input type="radio" onClick={()=> filterBySex("f")} name="gender" value="female"></input><label>Girl</label>
             <input type="radio" onClick={()=> filterBySex("all")} name="gender" value="all"></input><label>All</label>
-           {/* <Girl  />
-            <All  />
-            <Boy  /> */}
           </div>
           <div>
           <FavoritesNames names={favoriteNames} remove={removeFavorites} />
