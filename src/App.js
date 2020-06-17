@@ -31,14 +31,15 @@ const  App = () => {
   const removeFavorites = value => {
     const updatedFavoriteNames = favoriteNames.filter(name => name.id !== value.id);
     setFavoriteNames(updatedFavoriteNames);
-    babyNames.map((name) => { 
-      if (value.sex === name.sex){
+    babyNames.forEach((name) => { 
+      if (name.sex === value.sex){
         const updatedNames = [...babyNames, value];
         setBabyNames(updatedNames)
         setUpdateData(updatedNames)
       }
-    })
-  };
+    });
+    }
+    
   const filterBySex = (sex) => {
     if (sex === "f") {
       setBabyNames(updateData.filter( item => item.sex === 'f'))
