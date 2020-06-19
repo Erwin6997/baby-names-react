@@ -23,7 +23,6 @@ const  App = () => {
   if(name && (sex === "f" || sex === "m")){
     finalBabyNames = data.filter(baby => baby.sex === sex).filter(baby => baby.name.toLowerCase().includes(name.toLowerCase()))
   }
-
   if(favoriteNames){finalBabyNames = finalBabyNames.filter(  name => favoriteNames.indexOf( name ) < 0 )}
 
   const favorite = (value) =>{
